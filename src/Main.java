@@ -11,12 +11,9 @@ public class Main {
                 return "Hello Stream";
             }
         }).limit(30);
-        stringStream.forEach(new Consumer<String>() {
-            @Override
-            public void accept(String s) {
-                System.out.println("printing stream " + s);
-            }
-        });
+        stringStream.forEach(s ->
+                System.out.println("printing stream " + s)
+        );
 
     }
 }
