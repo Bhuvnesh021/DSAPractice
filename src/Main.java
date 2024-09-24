@@ -7,7 +7,7 @@ public class Main {
         Stream<String> stringStream = Stream.generate(new Supplier<String>() {
             @Override
             public String get() {
-                System.out.println("generating string fixing iss01");
+                System.out.println("generating string");
                 return "Hello Stream";
             }
         }).limit(30);
