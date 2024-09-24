@@ -4,12 +4,9 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        Stream<String> stringStream = Stream.generate(new Supplier<String>() {
-            @Override
-            public String get() {
-                System.out.println("generating string fixing iss01");
-                return "Hello Stream";
-            }
+        Stream<String> stringStream = Stream.generate(() -> {
+            System.out.println("generating string fixing iss01");
+            return "Hello Stream";
         }).limit(30);
         stringStream.forEach(new Consumer<String>() {
             @Override
